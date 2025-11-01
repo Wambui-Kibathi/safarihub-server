@@ -18,6 +18,13 @@ def create_app(config_name=None):
     mail.init_app(app)
     cors.init_app(app)
 
+    # All models should be imported here to register them with SQLAlchemy
+    from .models.user import User
+    from .models.destination import Destination
+    from .models.booking import Booking
+    from .models.payment import Payment
+    from .models.review import Review
+
     # Import and register Blueprints
     # Temporarily comment out blueprint imports to initialize database without route dependencies
     """
@@ -47,6 +54,6 @@ def create_app(config_name=None):
     # Simple test route
     @app.route("/")
     def home():
-        return {"message": "Jambo! Welcome to SafariHub API"}
+        return {"message": "Mambo! Welcome to SafariHub API"}
 
     return app
