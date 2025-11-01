@@ -26,8 +26,6 @@ def create_app(config_name=None):
     from .models.review import Review
 
     # Import and register Blueprints
-    # Temporarily comment out blueprint imports to initialize database without route dependencies
-    """
     from .routes.auth_routes import auth_bp
     from .routes.traveler_routes import traveler_bp
     from .routes.guide_routes import guide_bp
@@ -45,11 +43,10 @@ def create_app(config_name=None):
     app.register_blueprint(booking_bp, url_prefix="/api/bookings")
     app.register_blueprint(payment_bp, url_prefix="/api/payments")
     app.register_blueprint(upload_bp, url_prefix="/api/uploads")
-    """
 
     # Swagger
-    from .swagger_config import swagger
-    swagger.init_app(app)
+    from .swagger_config import configure_swagger
+    configure_swagger(app)
 
     # Simple test route
     @app.route("/")
