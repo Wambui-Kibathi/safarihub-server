@@ -8,7 +8,7 @@ from app.utils.cloudinary_service import upload_image_to_cloudinary
 
 upload_bp = Blueprint("upload_bp", __name__)
 
-ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
