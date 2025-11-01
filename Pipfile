@@ -14,11 +14,11 @@ flask-jwt-extended = "*"
 passlib = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
-flask-mail = "*"
 cloudinary = "*"
 requests = "*"
 flasgger = "*"
 flask = "*"
+flask-mail = "*"
 
 [dev-packages]
 
